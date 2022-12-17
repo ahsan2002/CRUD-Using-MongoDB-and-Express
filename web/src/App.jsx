@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 let baseUrl = ""
 if (window.location.href.split(":")[0] === "http") {
   baseUrl = "http://localhost:5001";
-  
+
 }
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   const [loadProduct, setLoadProduct] = useState(false);
   const [isEditMode, setIsEditMode] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
-  const[update,setupdate]=useState(false);
+  const [update, setupdate] = useState(false);
 
 
   const getAllProducts = async () => {
@@ -87,7 +87,7 @@ function App() {
       }),
     onSubmit: (values) => {
       console.log("values: ", values);
-      myFormik.resetForm({values:''});
+      myFormik.resetForm({ values: '' });
 
       axios.post(`${baseUrl}/product`, {
         name: values.productName,
@@ -230,70 +230,70 @@ function App() {
               <td>{eachProduct.price}</td>
               <td>{eachProduct.description}</td>
               <td style={{
-                display:"flex",
-                gap:"20px"
+                display: "flex",
+                gap: "20px"
               }}>
-              <button onClick={() => {
-              deleteProduct(eachProduct._id)
-            }}>delete</button>
+                <button onClick={() => {
+                  deleteProduct(eachProduct._id)
+                }}>delete</button>
 
-            <button onClick={() => {
-              editMode(eachProduct)
-            }}>edit</button>
+                <button onClick={() => {
+                  editMode(eachProduct)
+                }}>edit</button>
               </td>
 
- {(isEditMode && editingProduct._id === eachProduct._id && update === true) ?
-              <div>
+              {(isEditMode && editingProduct._id === eachProduct._id && update === true) ?
+                <div>
 
-                <form onSubmit={editFormik.handleSubmit}>
-                  <input
-                    id="productName"
-                    placeholder="Product Name"
-                    value={editFormik.values.productName}
-                    onChange={editFormik.handleChange}
-                  />
-                  <br /> <br />
-                  {
-                    (editFormik.touched.productName && Boolean(editFormik.errors.productName)) ?
-                      <span style={{ color: "red" }}>  {editFormik.errors.productName}</span>
-                      :
-                      null
-                  }
+                  <form onSubmit={editFormik.handleSubmit}>
+                    <input
+                      id="productName"
+                      placeholder="Product Name"
+                      value={editFormik.values.productName}
+                      onChange={editFormik.handleChange}
+                    />
+                    <br /> <br />
+                    {
+                      (editFormik.touched.productName && Boolean(editFormik.errors.productName)) ?
+                        <span style={{ color: "red" }}>  {editFormik.errors.productName}</span>
+                        :
+                        null
+                    }
 
-                  <br />
-                  <input
-                    id="productPrice"
-                    placeholder="Product Price"
-                    value={editFormik.values.productPrice}
-                    onChange={editFormik.handleChange}
-                  />
-                  {
-                    (editFormik.touched.productPrice && Boolean(editFormik.errors.productPrice)) ?
-                      <span style={{ color: "red" }}>{editFormik.errors.productPrice}</span>
-                      :
-                      null
-                  }
+                    <br />
+                    <input
+                      id="productPrice"
+                      placeholder="Product Price"
+                      value={editFormik.values.productPrice}
+                      onChange={editFormik.handleChange}
+                    />
+                    {
+                      (editFormik.touched.productPrice && Boolean(editFormik.errors.productPrice)) ?
+                        <span style={{ color: "red" }}>{editFormik.errors.productPrice}</span>
+                        :
+                        null
+                    }
 
-                  <br />
-                  <input
-                    id="productDescription"
-                    placeholder="Product Description"
-                    value={editFormik.values.productDescription}
-                    onChange={editFormik.handleChange}
-                  />
-                  {
-                    (editFormik.touched.productDescription && Boolean(editFormik.errors.productDescription)) ?
+                    <br />
+                    <input
+                      id="productDescription"
+                      placeholder="Product Description"
+                      value={editFormik.values.productDescription}
+                      onChange={editFormik.handleChange}
+                    />
+                    {
+                      (editFormik.touched.productDescription && Boolean(editFormik.errors.productDescription)) ?
 
-                      <span style={{ color: "red" }}> {editFormik.errors.productDescription}</span>
-                      :
-                      null
-                  }
+                        <span style={{ color: "red" }}> {editFormik.errors.productDescription}</span>
+                        :
+                        null
+                    }
 
-                  <br />
-                  <button type="submit"> Submit </button>
-                </form>
+                    <br />
+                    <button type="submit"> Submit </button>
+                  </form>
 
-              </div> : null}
+                </div> : null}
 
 
 
@@ -301,7 +301,7 @@ function App() {
 
 
 
-        ))}
+          ))}
         </table>
       </div>
 
