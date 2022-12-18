@@ -51,6 +51,7 @@ body{
   margin-bottom: 20px;
   font-family: 'Open Sans', sans-serif;
 }
+
 .button button{
   padding: 20px 10px;
   width: 100%;
@@ -71,10 +72,10 @@ body{
 
 .my{
   background-color: #fefefe;
-    margin: 0% auto; /* 15% from the top and centered */
+    margin: 0% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%; 
     text-align: center;
     overflow-x: auto;
     overflow-y: auto;
