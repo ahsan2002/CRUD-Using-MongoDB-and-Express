@@ -42,7 +42,9 @@ body{
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   font-family: 'Open Sans', sans-serif;
+  border-bottom: 1px solid black;
 }
+
 .button{
   border-radius: 10px;
   margin-top: 20px;
@@ -75,6 +77,7 @@ body{
     width: 80%; /* Could be more or less, depending on screen size */
     text-align: center;
     overflow-x: auto;
+    overflow-y: auto;
 }
 
 td {
