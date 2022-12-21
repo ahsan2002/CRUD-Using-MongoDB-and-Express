@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "app.cyclic.mymongodbapp.twa",
+                     "sha256_cert_fingerprints": ["73:B6:CB:B9:08:EA:B7:D0:91:D1:F5:C9:41:A7:50:5D:CE:38:77:C0:82:7A:5E:6C:5D:BB:E3:8B:B2:32:7B:A7"] }
+      }
+]
